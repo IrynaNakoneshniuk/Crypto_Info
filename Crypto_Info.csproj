@@ -7,4 +7,15 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.7.1" />
+    <PackageReference Include="Prevu.LiveCharts.Wpf.NetCore3" Version="0.9.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ModelView\" />
+    <Folder Include="Command\" />
+    <Folder Include="Assets\" />
+  </ItemGroup>
+
 </Project>
