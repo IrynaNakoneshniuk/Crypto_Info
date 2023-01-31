@@ -43,12 +43,6 @@
                         <MenuItem Header="Exchange rate" Background="#424242" Foreground="White"/>
                     </StackPanel>
                 </Expander>
-                <!--<Menu Background="#424242">
-                    <MenuItem Header="Watchlist" Foreground="White" FontSize="18" Background="#424242">
-                        <MenuItem Header="Marketplace" Background="#424242" />
-                        <MenuItem Header="Exchange rate" Background="#424242"/>
-                    </MenuItem>
-                </Menu>-->
             </Grid>
         </Border>
         <Border Grid.ColumnSpan="3" Background="#212121" Opacity="23">
