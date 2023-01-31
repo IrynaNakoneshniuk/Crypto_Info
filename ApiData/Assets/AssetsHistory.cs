@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Crypto_Info.ApiData
 {
-    class AssetsHistory
+    public class AssetsHistory
     {
+        public decimal priceUsd { get; set; }
+        public TimeSpan time { get; set; }
     }
 }

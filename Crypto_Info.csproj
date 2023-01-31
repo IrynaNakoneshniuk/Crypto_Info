@@ -15,7 +15,6 @@
   <ItemGroup>
     <Folder Include="ModelView\" />
     <Folder Include="Command\" />
-    <Folder Include="Assets\" />
   </ItemGroup>
 
 </Project>
