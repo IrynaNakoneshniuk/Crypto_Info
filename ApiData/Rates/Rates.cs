@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Crypto_Info.ApiData.Rates
 {
-    class Rates
+    public class Rates
     {
+        public string ? id { get; set; }
+        public string ? symbol { get; set; }
+        public string? currencySymbol { get; set; }
+        public decimal ? rateUsd { get; set; }
+        public string ? type { get; set; }
     }
 }
