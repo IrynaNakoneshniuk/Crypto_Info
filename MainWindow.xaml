@@ -24,7 +24,7 @@
             <RowDefinition Height="0.10*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <ContentControl Content="{Binding SelectedViewModel, Mode=TwoWay}" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" />
+        <ContentControl Content="{Binding SelectedViewModel, Mode=TwoWay}" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" RenderTransformOrigin="0.393,-0.048" />
         <Border  CornerRadius="10" Margin="3" Grid.Row="1">
             <Grid>
                 <Grid.RowDefinitions>
@@ -47,12 +47,13 @@
             </Grid>
         </Border>
         <Border Grid.ColumnSpan="3" Background="#212121" Opacity="23">
-            <Grid>
+            <Grid Background="#212121">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0.2*"/>
                     <ColumnDefinition/>
                     <ColumnDefinition Width="0.5*"/>
                 </Grid.ColumnDefinitions>
+                
                 <ComboBox Grid.Column="2" Margin="5"
                   materialDesign:HintAssist.Hint="Search stock"
                   materialDesign:HintAssist.FontFamily="Verdana"
@@ -61,13 +62,30 @@
                   IsEditable="True"
                   Style="{StaticResource MaterialDesignComboBox}"></ComboBox>
                 <Label Content="Popular" Style="{StaticResource MaterialDesignLabel}" FontSize="12" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <DataGrid Grid.Column="1" x:Name="lvPopularCoin" Foreground="White" >
-                    <Border CornerRadius="10"/>
-                    <Border CornerRadius="10"/>
-                    <Border CornerRadius="10"/>
-                    <Border CornerRadius="10"/>
-                </DataGrid>
             </Grid>
         </Border>
+        <DataGrid x:Name="CoinsDG" Grid.Row="1" AutoGenerateColumns="False"  Grid.Column="0" Background="#424242"
+                  Grid.RowSpan="3" Margin="10 0 5 15" Foreground="#f2f2f2" IsReadOnly="True" GridLinesVisibility="None" SelectedItem="{Binding PopularAssets, Mode=TwoWay}">
+            <DataGrid.Resources>
+                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="FontSize" Value="25"/>
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns >
+                <DataGridTextColumn />
+                <DataGridTemplateColumn Width="SizeToCells" IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Icon, Mode=TwoWay}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Binding="{Binding Precent,Mode=TwoWay}" Foreground="{Binding ColorPrecent,Mode=TwoWay}"/>
+                <DataGridTextColumn Binding="{Binding Precent,Mode=TwoWay, StringFormat={}{0:F3}}"/>
+                <DataGridTextColumn>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>
