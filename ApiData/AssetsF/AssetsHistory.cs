@@ -9,6 +9,6 @@ namespace Crypto_Info.ApiData
     public class AssetsHistory
     {
         public decimal priceUsd { get; set; }
-        public TimeSpan time { get; set; }
+        public long time { get; set; }
     }
 }

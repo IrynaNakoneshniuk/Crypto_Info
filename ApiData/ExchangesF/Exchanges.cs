@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Crypto_Info.ApiData.Exchanges
+namespace Crypto_Info.ApiData.ExchangesF
 {
     public class Exchanges
     {
@@ -16,7 +16,7 @@ namespace Crypto_Info.ApiData.Exchanges
         public int ? tradingPairs { get; set; }
         public bool? socket { get; set; }
         public string ? exchangeUrl { get; set; }
-        public TimeSpan? updated { get; set; }
+        public long? updated { get; set; }
 
     }
 }

@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data;
 
-namespace Crypto_Info.ApiData.Markets
+namespace Crypto_Info.ApiData.MarketsF
 {
     public class Markets
     {
@@ -17,6 +14,6 @@ namespace Crypto_Info.ApiData.Markets
         public decimal priceQuote { get; set; }
         public decimal priceUsd { get; set; }
         public int ? tradesCount24Hr { get; set; }
-        public TimeSpan ? updated { get; set; } 
+        public long? updated { get; set; } 
     }
 }

@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Crypto_Info.ApiData.Markets
+
+namespace Crypto_Info.ApiData.MarketsF
 {
     public class Candles
     {
@@ -13,6 +10,6 @@ namespace Crypto_Info.ApiData.Markets
         public decimal? low  { get; set; }
         public decimal? close { get; set; }
         public decimal? volume { get; set; }
-        public TimeSpan ? period { get; set; }
+        public long? period { get; set; }
     }
 }

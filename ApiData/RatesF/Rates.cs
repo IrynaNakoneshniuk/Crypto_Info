@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Crypto_Info.ApiData.Rates
+namespace Crypto_Info.ApiData.RatesF
 {
     public class Rates
     {

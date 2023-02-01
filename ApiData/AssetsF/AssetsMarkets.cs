@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Crypto_Info.ApiData.Assets
+namespace Crypto_Info.ApiData.AssetsF
 {
     public class AssetsMarkets
     {
