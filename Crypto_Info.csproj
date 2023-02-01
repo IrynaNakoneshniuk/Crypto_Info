@@ -14,8 +14,4 @@
     <PackageReference Include="RestSharp" Version="108.0.3" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ModelView\" />
-  </ItemGroup>
-
 </Project>

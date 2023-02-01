@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Crypto_Info.Command
+namespace Crypto_Info
 {
-    public  class TestCom
+    public class MarketplaceVM:BaseVM
     {
-
     }
 }

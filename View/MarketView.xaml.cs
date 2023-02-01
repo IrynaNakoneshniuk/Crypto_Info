@@ -2,15 +2,15 @@
 using System.Windows.Controls;
 using LiveCharts;
 using LiveCharts.Wpf;
-namespace Crypto_Info.View
+namespace Crypto_Info
 {
     /// <summary>
     /// Interaction logic for UserControl1.xaml
     /// </summary>
-    public partial class UserControl1 : UserControl
+    public partial class MarketView : UserControl
     {
         private string[] _labels;
-        public UserControl1()
+        public MarketView()
         {
             InitializeComponent();
 

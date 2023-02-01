@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Crypto_Info.View
+namespace Crypto_Info
 {
     /// <summary>
     /// Interaction logic for ExchangeView.xaml

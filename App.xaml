@@ -2,6 +2,8 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Crypto_Info"
+             xmlns:view="clr-namespace:Crypto_Info"
+             xmlns:viewmodels="clr-namespace:Crypto_Info"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
@@ -11,6 +13,15 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <DataTemplate DataType="{x:Type viewmodels:MainPageVM }">
+                <view:MainWindow/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:ExchangerateVM }">
+                <view:ExchangeView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:MarketplaceVM }">
+                <view:MarketView/>
+            </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -27,20 +27,17 @@ namespace Crypto_Info
     {
         public ApiRestClientCoincapcs ap = new ApiRestClientCoincapcs();
         List<Candles> assets = new List<Candles>();
+        public MainPageVM mainPage;
         public MainWindow()
         {
-           
             InitializeComponent();
-            
-            
-            
-           
-
+            mainPage= new MainPageVM();
+            DataContext = mainPage;
         }
 
         private async void Window_MouseDoubleClickAsync(object sender, MouseButtonEventArgs e)
         {
-            assets = await ap.GetCandlesAsync("poloniex", "h8", "ethereum", "bitcoin");
+            assets = await ap.GetCandlesAsync("poloniex", "h8", "usd", "bitcoin");
 
 
         }        
