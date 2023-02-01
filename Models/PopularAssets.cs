@@ -13,8 +13,8 @@ namespace Crypto_Info
         public decimal ? Precent { get; set; }
         public string ? Icon { get; set; }
 
-        public SolidColorBrush? ColorPrecent;
-        public PopularAssets(string ? name, decimal ? precent, string ? icon, SolidColorBrush? ColorPrecent)
+        public Brush? ColorPrecent{get; set; }
+        public PopularAssets(string ? name, decimal ? precent, string ? icon, Brush? ColorPrecent)
         {
             Name = name;
             Precent = precent;

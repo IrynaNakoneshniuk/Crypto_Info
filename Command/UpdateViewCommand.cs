@@ -37,6 +37,10 @@ namespace Crypto_Info
                     {
                         viewModel.SelectedViewModel = new ExchangerateVM();
                     }
+                    else if (parameter.ToString() == CommandParameters.CommandParam.ElementAt(2))
+                    {
+                        viewModel.SelectedViewModel = new MainPageVM();
+                    }
                 }
                 catch (Exception ex)
                 {

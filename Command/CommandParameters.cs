@@ -8,6 +8,6 @@ namespace Crypto_Info
 {
     public static class CommandParameters
     {
-        public static IEnumerable<string> CommandParam = new List<string>() { "Marketplace", "Exchange rate" };
+        public static IEnumerable<string> CommandParam = new List<string>() { "Marketplace", "Exchange rate","Main"};
     }
 }

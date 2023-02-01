@@ -25,23 +25,13 @@ namespace Crypto_Info
     /// </summary>
     public partial class MainWindow : Window
     {
-        public ApiRestClientCoincapcs ap = new ApiRestClientCoincapcs();
-        List<Assets> assets = new List<Assets>();
         public MainPageVM mainPage;
         public MainWindow()
         {
-            
             InitializeComponent();
-           
             mainPage = new MainPageVM();
             DataContext = mainPage;
-        }
-
-        private async void Window_MouseDoubleClickAsync(object sender, MouseButtonEventArgs e)
-        {
-            //assets = await ap.GetAssetsAsync();
-            //TR.ItemsSource = assets;
-
+           
         }
     }
 }

@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Media;
 
@@ -22,30 +23,28 @@ namespace Crypto_Info
 
         public static async Task IniLists()
         {
-            ListAssets =  await Coincapcs.GetAssetsAsync();
-            IconAssets = await ApiRestClient.List_Assets_IconsAsync(32);
+            ListAssets = await Coincapcs.GetAssetsAsync();
+            IconAssets = await  ApiRestClient.List_Assets_IconsAsync(32);
             Marketplace = await Coincapcs.GetMarketsAsync();
         }
 
-        public static async Task< List<PopularAssets> >GetListIconAssetsPopular()
+        public static List<PopularAssets> GetListIconAssetsPopular()
         {
-            await IniLists();
-            return await Task.Run(async () =>
+            Task t=Task.Run(async () => { await IniLists(); });
+            t.Wait();   
+            for (int i = 0; i < ListAssets.Count; i++)
             {
-                for (int i = 0; i < 10; i++)
+                var tmp = (from k in IconAssets
+                           where k.asset_id == ListAssets[i].symbol
+                           select k).FirstOrDefault();
+                if (tmp != null)
                 {
-                    var tmp = (from k in IconAssets.AsParallel()
-                               where k.asset_id == ListAssets[i].symbol
-                               select k).FirstOrDefault();
-                    if (tmp != null)
-                    {
-                        SolidColorBrush solid = (ListAssets[i].changePercent24Hr < 0) ? Brushes.Red : Brushes.GreenYellow;
+                    Brush solid = (ListAssets[i].changePercent24Hr < 0) ? Brushes.Red : Brushes.GreenYellow;
 
-                        PopularAssets.Add(new PopularAssets(ListAssets[i].name, ListAssets[i].changePercent24Hr, tmp.url, solid));
-                    }
+                    PopularAssets.Add(new PopularAssets(ListAssets[i].name, ListAssets[i].changePercent24Hr, tmp.url, solid));
                 }
-                return PopularAssets;
-            });
+            }
+            return PopularAssets;
         }
     }
 }

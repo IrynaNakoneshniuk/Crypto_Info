@@ -9,13 +9,13 @@ namespace Crypto_Info
     {
         public BaseVM _selectedViewModel { get; set; }
         private List<PopularAssets> _popularAssets;
-        public List<PopularAssets> PopularAssets
+        public List<PopularAssets> popularAssets
         {
 
             get { return _popularAssets; }
             set {
                 _popularAssets = value; 
-            OnPropertyChanged(nameof(PopularAssets));}
+            OnPropertyChanged(nameof(popularAssets));}
         }
         public ICommand SelectedView { get; set; }
         public BaseVM SelectedViewModel
@@ -32,11 +32,7 @@ namespace Crypto_Info
             _selectedViewModel = new BaseVM();
             _popularAssets = new List<PopularAssets>();
             SelectedView = new UpdateViewCommand(this);
-            _popularAssets = new List<PopularAssets>();
-            _popularAssets = FasadApi.GetListIconAssetsPopular().Result;
-
-
-
+            _popularAssets = FasadApi.GetListIconAssetsPopular();
         }
     }
 }
