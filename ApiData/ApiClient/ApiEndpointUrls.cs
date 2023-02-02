@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Crypto_Info.ApiData;
+using System;
 
 namespace Crypto
 {

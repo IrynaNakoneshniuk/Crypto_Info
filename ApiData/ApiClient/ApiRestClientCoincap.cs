@@ -14,11 +14,11 @@ using System.Linq;
 
 namespace Crypto_Info.ApiData.ApiClient
 {
-    public class ApiRestClientCoincapcs
+    public class ApiRestClientCoincap
     {
         private string _url;
 
-        public ApiRestClientCoincapcs()
+        public ApiRestClientCoincap()
         {
             _url = "https://api.coincap.io";
         }

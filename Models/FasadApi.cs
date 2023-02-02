@@ -15,10 +15,11 @@ namespace Crypto_Info
     public static class FasadApi
     {
         public static List<Assets> ListAssets { get; set; }=new List<Assets>();
+        public static List<AssetsHistory> assetsHistories { get; set; } =new List<AssetsHistory>();
         public static List<Icon> IconAssets { get; set; }=new List<Icon>() { };
         public static List<PopularAssets> PopularAssets { get; set; } = new List<PopularAssets>();
         public static List<Markets> Marketplace { get; set; }= new List<Markets>();
-        public static ApiRestClientCoincapcs  Coincapcs { get; set; } =new ApiRestClientCoincapcs();
+        public static ApiRestClientCoincap  Coincapcs { get; set; } =new ApiRestClientCoincap();
         public static ApiRestClient ApiRestClient { get; set; } = new ApiRestClient();
 
         public static async Task IniLists()
@@ -39,9 +40,7 @@ namespace Crypto_Info
                            select k).FirstOrDefault();
                 if (tmp != null)
                 {
-                    Brush solid = (ListAssets[i].changePercent24Hr < 0) ? Brushes.Red : Brushes.GreenYellow;
-
-                    PopularAssets.Add(new PopularAssets(ListAssets[i].name, ListAssets[i].changePercent24Hr, tmp.url, solid));
+                    PopularAssets.Add(new PopularAssets(ListAssets[i].name, ListAssets[i].changePercent24Hr, tmp.url, ListAssets[i].id));
                 }
             }
             return PopularAssets;

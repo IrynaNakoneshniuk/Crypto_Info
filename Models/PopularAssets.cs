@@ -12,14 +12,14 @@ namespace Crypto_Info
         public string ?  Name { get; set; }
         public decimal ? Precent { get; set; }
         public string ? Icon { get; set; }
-
-        public Brush? ColorPrecent{get; set; }
-        public PopularAssets(string ? name, decimal ? precent, string ? icon, Brush? ColorPrecent)
+       
+        public string? Id{get; set; }
+        public PopularAssets(string ? name, decimal ? precent, string ? icon, string? Id)
         {
             Name = name;
             Precent = precent;
             Icon = icon;
-            this.ColorPrecent = ColorPrecent;
+            this.Id = Id;
         }
     }
 }
