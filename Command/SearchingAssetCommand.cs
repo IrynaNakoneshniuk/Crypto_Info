@@ -20,15 +20,19 @@ namespace Crypto_Info
         {
             return true;
         }
-        private List<PopularAssets> FilterCurrencyList()
-        {
-            List<PopularAssets> filtered = mainPageVM.popularAssets.Where(source => source.Name.StartsWith(mainPageVM.SymbolSearching.ToUpper())).ToList<PopularAssets>();
-            return filtered;
-        }
+
         public void Execute(object? parameter)
         {
-            var filtered = FilterCurrencyList();
-            mainPageVM.popularAssets= filtered;
+            List<PopularAssets> filtered = mainPageVM.popularAssets.
+                Where(source => source.Id.StartsWith(mainPageVM.SymbolSearching)).ToList<PopularAssets>();
+            if (filtered != null)
+            {
+                mainPageVM.popularAssets = filtered;
+            }
+            else
+            {
+                mainPageVM.popularAssets = FasadApi.GetListIconAssetsPopular();
+            }
         }
     }
 }

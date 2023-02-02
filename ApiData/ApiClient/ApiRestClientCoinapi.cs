@@ -17,7 +17,7 @@ namespace Crypto
   
         public ApiRestClient(bool sandbox = true)
         {
-            this.apikey = "C0970770-22A5-4628-B691-6AE79D26815A";
+            this.apikey = "BF221201-766D-4A57-8853-E5083DF93D2C";
             if (sandbox)
             {
                 WebUrl = "https://rest-sandbox.coinapi.io";
@@ -44,7 +44,7 @@ namespace Crypto
 
                         HttpResponseMessage response = await client.GetAsync(WebUrl + url).ConfigureAwait(false);
 
-                        if (!response.IsSuccessStatusCode)
+                        if (response.IsSuccessStatusCode)
 
                         return await DeserializeAsync<T>(response).ConfigureAwait(false);
                         else
@@ -84,7 +84,7 @@ namespace Crypto
             try
             {
                 var request = new RestRequest(ApiEndpointUrls.AssestsIcons(iconSize));
-                request.AddHeader("X-CoinAPI-Key", "C0970770-22A5-4628-B691-6AE79D26815A");
+                request.AddHeader("X-CoinAPI-Key", "BF221201-766D-4A57-8853-E5083DF93D2C");
                 RestResponse response = client.Execute(request);
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
@@ -120,6 +120,11 @@ namespace Crypto
             {
                 throw new Exception(ex.ToString(), ex);
             }
+        }
+        public Task<ExchangeCurrentrate> ExchangeRatesGetAll(string baseId, bool invert = false)
+        {
+            var url = ApiEndpointUrls.ExchangeRate(baseId, invert);
+            return GetData<ExchangeCurrentrate>(url);
         }
     }
 

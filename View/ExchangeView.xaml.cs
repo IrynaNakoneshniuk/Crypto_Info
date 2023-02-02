@@ -20,9 +20,12 @@ namespace Crypto_Info
     /// </summary>
     public partial class ExchangeView : UserControl
     {
+        public ExchangerateVM ExchangerateVM;
         public ExchangeView()
         {
             InitializeComponent();
+            this.ExchangerateVM = new ExchangerateVM();
+            this.DataContext= ExchangerateVM;
         }
     }
 }

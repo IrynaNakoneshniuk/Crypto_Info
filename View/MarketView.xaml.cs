@@ -9,13 +9,12 @@ namespace Crypto_Info
     /// </summary>
     public partial class MarketView : UserControl
     {
-        private string[] _labels;
+       public MarketplaceVM marketplaceVM { get; set; }
         public MarketView()
         {
             InitializeComponent();
-
-
-            _labels = new string[] { "10", "40", "60", "70" };
+            marketplaceVM=new MarketplaceVM();
+            this.DataContext=marketplaceVM;
         }
        
     }

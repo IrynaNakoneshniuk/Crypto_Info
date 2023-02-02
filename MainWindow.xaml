@@ -45,13 +45,18 @@
                     <ColumnDefinition/>
                     <ColumnDefinition Width="0.5*"/>
                 </Grid.ColumnDefinitions>
-                <ComboBox Grid.Column="2" Margin="5" SelectedItem="{Binding SearchingAssets, Mode=TwoWay}"
-                  materialDesign:HintAssist.Hint="Search stock"
+                <StackPanel Grid.Column="2" Orientation="Horizontal">
+                    <ComboBox Grid.Column="2" Margin="5"
+                  materialDesign:HintAssist.Hint="Search stock" 
                   materialDesign:HintAssist.FontFamily="Verdana"
-                  MinWidth="72"
+                  MinWidth="220"
+                  Height="50"
                   Foreground="White" 
-                  IsEditable="True" 
+                  IsEditable="True" HorizontalAlignment="Center"
                   Style="{StaticResource MaterialDesignComboBox}" Text="{Binding SymbolSearching, Mode=TwoWay}"></ComboBox>
+                    <Button Grid.Column="2" Style="{StaticResource MaterialDesignFlatLightButton}" Content="Search" Foreground="White" FontSize="10" HorizontalAlignment="Center"
+                            Command="{Binding SearchingAssets,Mode=TwoWay}"/>
+                </StackPanel>
                 <Label Content="Popular" Style="{StaticResource MaterialDesignLabel}" FontSize="12" Foreground="WhiteSmoke" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <StackPanel Grid.Column="1" HorizontalAlignment="Center"
                     Orientation="Horizontal"

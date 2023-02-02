@@ -14,15 +14,30 @@
      TextOptions.TextRenderingMode="Auto"
      Background="{DynamicResource MaterialDesignPaper}"
      FontFamily="{DynamicResource MaterialDesignFont}">
-    <Grid  Background="Bisque">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-            </Grid.RowDefinitions>
-           
-           
-        </Grid>
+    <Grid  Background="#424242">
+        <Grid.RowDefinitions>
+                <RowDefinition Height="0.2*"></RowDefinition>
+                <RowDefinition Height="0.1*"></RowDefinition>
+               <RowDefinition ></RowDefinition>
+        </Grid.RowDefinitions>
+            <Button Style="{StaticResource MaterialDesignPaperLightButton}" Background="#424242" Content="Update"
+                    Command="{Binding SelectedMarket,Mode=TwoWay}">
+            </Button>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Label Content="Exchage ID" Foreground="White"  FontSize="14" Margin="10 0 0 0"></Label>
+            <Label Content="Base assets" Foreground="White" FontSize="14" Margin="40 0 0 0"></Label>
+            <Label Content="Qute assets" Foreground="White" FontSize="14" Margin="40 0 0 0"></Label>
+            <Label Content="Symbol" Foreground="White" FontSize="14" Margin="40 0 0 0"></Label>
+            <Label Content="Qute Symbol" Foreground="White" FontSize="14" Margin="40 0 0 0"></Label>
+            <Label Content="Total Price" Foreground="White" FontSize="14" Margin="59 0 0 0"></Label>
+            <Label Content="Price USD" Foreground="White" FontSize="14" Margin="84 0 0 0"></Label>
+            <Label Content="Precent" Foreground="White" FontSize="14" Margin="80 0 0 0"></Label>
+        </StackPanel>
+            <ContentControl Content="{Binding marketplaceVM, Mode=TwoWay}" />
+        <DataGrid x:Name="CoinsDG"  Background="#424242" Grid.Row="2"
+                  Grid.RowSpan="3" Margin="10 0 5 15" Foreground="#f2f2f2" IsReadOnly="True" ItemsSource="{Binding AssetsMarkets , Mode=TwoWay}"
+                  VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden"
+                  GridLinesVisibility="None" HeadersVisibility="None">
+        </DataGrid>
     </Grid>
 </UserControl>

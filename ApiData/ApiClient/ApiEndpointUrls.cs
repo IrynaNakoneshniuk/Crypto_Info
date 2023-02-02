@@ -17,6 +17,7 @@ namespace Crypto
         public static string AssetsMarkets(string IdAssets) => ($"/v2/assets/{IdAssets}/markets");
         public static string Candles(string exchange, string interval, string baseId, string quoteId) => ($"/v2/candles?exchange={exchange}&interval={interval}&baseId={baseId}&quoteId={quoteId}");
         public static string ExchangeRateSpecific(string baseId, string quoteId) => string.Format("/v1/exchangerate/{0}/{1}", baseId, quoteId);
+        public static string ExchangeRate(string baseId, bool invert) => string.Format("/v1/exchangerate/{0}?invert={1}", baseId, invert);
     }
 }
 

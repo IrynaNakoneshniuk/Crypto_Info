@@ -48,7 +48,7 @@ namespace Crypto_Info
         }
         public  MainPageVM()
         {
-            _selectedViewModel = new BaseVM();
+            _selectedViewModel = this;
             _popularAssets = new List<PopularAssets>();
             SelectedView = new UpdateViewCommand(this);
             SearchingAssets= new SearchingAssetCommand(this);

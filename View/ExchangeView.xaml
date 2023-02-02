@@ -5,8 +5,27 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Crypto_Info"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" Background="Aqua">
+             d:DesignHeight="450" d:DesignWidth="800" Background="#42424242">
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"></RowDefinition>
+            <RowDefinition Height="0.1*"></RowDefinition>
+            <RowDefinition ></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button Style="{StaticResource MaterialDesignPaperLightButton}" Background="#424242" Content="Update"
+                    Command="{Binding UpdateRates,Mode=TwoWay}">
+        </Button>
+        <ContentControl Content="{Binding ExchangerateVM, Mode=TwoWay}" />
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Label Content="Time" Foreground="White" FontSize="14" Margin="20 0 0 0"></Label>
+            <Label Content="Quote assets" Foreground="White" FontSize="14" Margin="80 0 0 0"></Label>
+            <Label Content="Rate" Foreground="White" FontSize="14" Margin="50 0 0 0"></Label>
+        </StackPanel>
+       
+        <DataGrid x:Name="CoinsDG"  Background="#424242" Grid.Row="2" 
+                  Grid.RowSpan="3" Margin="10 0 5 15" Foreground="#f2f2f2" IsReadOnly="True" ItemsSource="{Binding Exchange.rates, Mode=TwoWay}"
+                  VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden"
+                  GridLinesVisibility="None" HeadersVisibility="None">
+        </DataGrid>
     </Grid>
 </UserControl>

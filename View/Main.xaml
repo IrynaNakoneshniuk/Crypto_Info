@@ -33,9 +33,9 @@
                             <RowDefinition/>
                         </Grid.RowDefinitions>
                         <Label  Content="Supplay USD" Foreground="White" Margin="5" HorizontalAlignment="Center"/>
-                        <Label Grid.Column="1"  Foreground="White"  Content="{Binding Supplay, Mode=TwoWay}" HorizontalAlignment="Center" Width="100"/>
+                        <Label Grid.Column="1"  Foreground="White"  Content="{Binding Supplay, Mode=TwoWay,StringFormat={}{0:F3} }" HorizontalAlignment="Center" Width="100"/>
                         <Label Content="Price USD" Foreground="White" Margin="5" Grid.Row="1" HorizontalAlignment="Center"/>
-                        <Label Content="{Binding Price, Mode=TwoWay}" Foreground="White" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Width="100"/>
+                        <Label Content="{Binding Price, Mode=TwoWay, StringFormat={}{0:F3}}" Foreground="White" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Width="100"/>
                     </Grid>
                 </Border>
                 <StackPanel Orientation="Horizontal" Margin="10">

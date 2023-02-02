@@ -12,6 +12,7 @@ namespace Crypto_Info
         private static string _interval;
         public static decimal? Supply { get; set; }
         public static decimal? Price { get; set; }
+        
         public static string _Name
         {
             get { return _name; }
